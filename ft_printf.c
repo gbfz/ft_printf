@@ -14,10 +14,10 @@
 
 #include "ft_printf.h"
 
+	/*
 int				main(void)
 {
 	//ft_printf("\n---------------------------------------------------------------------------------\n\n");
-	/*
 	char	a[] = "this is a string";
 	char	b[] = "this is another string";
 	int		itogo;
@@ -118,7 +118,6 @@ int				main(void)
 	printf("\n");
 	ft_printf(">------------<%20.28s>------------<", t1);
 	printf("\n");
-	*/
 	printf("-%d-", printf("%s", "(null)"));
 	printf("\n");
 	printf("-%d-", ft_printf("%s", "(null)"));
@@ -127,6 +126,13 @@ int				main(void)
 	printf("\n");
 	ft_printf(">----------<%.2s>----------<", NULL);
 	printf("\n");
+	printf("%20.2s\n", "please work");
+	ft_printf("%20.2s\n", "please work");
+	int thischar = -50;
+	printf("Correct: %c\n", (char)thischar);
+	printf("   Also: \\0x%x\n", (char)thischar);
+	ft_printf("   Mine: %c\n", (char)thischar);
+	ft_printf("   Also: \\0x%x\n", (char)thischar);
 	return (0);
 }
 
@@ -159,6 +165,8 @@ void		ft_destroy_struct(p_struct *csi)
 	free(csi);
 }
 
+*/
+
 int		ft_strintlen(const char *s)
 {
 	int i;
@@ -182,6 +190,7 @@ void	ft_putstr(const char *s)
 	}
 }
 
+/*
 int		ft_check_fmt(const char *fmt, p_struct *csi)
 {
 	if (*(fmt + csi->cslen) == 'c')
@@ -248,36 +257,78 @@ int		ft_check_flags(const char *fmt, p_struct *csi)
 	csi->cslen += ft_fmt_fwd(csi->prec) + ptr - fmt;
 	return (ft_check_fmt(fmt, csi));
 }
+*/
 
 void	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putres(const char *res, p_struct *csi)
+void	ft_putres(const char *res, interface *fsi)
 {
-	int i;
+	int	i;
+	int	len;
 	
-	while (--csi->offset >= ft_strintlen(res))
-		ft_putchar(csi->zero == 0 ? ' ' : '0');
+	len = ft_strintlen(res);
+	if (fsi->prec < len)
+			len = fsi->prec;
+	while (--fsi->field >= len)
+	{
+			if (fsi->zero == 0)
+					ft_putchar(' ');
+			else
+					ft_putchar('0');
+	}
+	if (fsi->prec)
+	{
+			while (fsi->prec-- > len)
+					ft_putchar('0');
+			i = 0;
+			while (i <= fsi->prec && res[i])
+					ft_putchar(res[i]);
+	}
+	else
+			ft_putstr(res);
+	while (++fsi->field < 0 && -(fsi->field) > len)
+			ft_putchar(' ');
+	/*
+	len = ft_strintlen(res);
+	if (csi->prec < len)
+		len = csi->prec;
+	while (--csi->offset >= len)
+	{
+		if (csi->zero == 0)
+			ft_putchar(' ');
+		else
+			ft_putchar('0');
+	}
 	if (csi->prec)
 	{
-		while (csi->prec-- > ft_strintlen(res))
+		while (csi->prec-- > len)
 			ft_putchar('0');
 		i = 0;
-		while (i < csi->prec && res[i])
+		while (i <= csi->prec && res[i])
 			ft_putchar(res[i++]);
 	}
 	else
 		ft_putstr(res);
-	while (++csi->offset < 0 && -(csi->offset) > ft_strintlen(res))
+	while (++csi->offset < 0 && -(csi->offset) > len)
 		ft_putchar(' ');
+		*/
 }
+
+/*
 
 char	*ft_ctostr(int arg)
 {
 	char *res;
 
+	if (!ft_isprint(arg))
+	{
+		ft_putstr("\\0x");
+		ft_putstr(ft_dtohex(arg));
+		return ("");
+	}
 	res = (char *)malloc(sizeof(char) * 2);
 	if (!res)
 		return (NULL);
@@ -338,3 +389,4 @@ int		ft_printf(const char *fmt, ...)
 	}
 	return (len);
 }
+	*/

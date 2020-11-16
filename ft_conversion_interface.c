@@ -74,13 +74,13 @@ char	*ft_utoa(unsigned int n)
 	return (res);
 }
 
-char	*ft_dtohex(size_t n)
+char	*ft_dtohex(int n)
 {
 	char	*res;
 	int		i;
-	size_t	hex;
-	size_t	remainder;
-	size_t	divisor;
+	int		hex;
+	int		remainder;
+	int		divisor;
 
 	i = 0;
 	divisor = 1;
@@ -118,7 +118,7 @@ char	*ft_strtoupper(char *s)
 	return (s);
 }
 
-char	*ft_ptostr(void *arg)
+char	*ft_ptostr(int arg)
 {
 	char	*res;
 
@@ -128,7 +128,7 @@ char	*ft_ptostr(void *arg)
 	res[0] = '0';
 	res[1] = 'x';
 	res += 2;
-	ft_strlcpy(res, ft_dtohex((size_t)arg), 13);
+	ft_strlcpy(res, ft_dtohex((int)arg), 13);
 	res -= 2;
 	return (res);
 }
@@ -136,8 +136,8 @@ char	*ft_ptostr(void *arg)
 char	*ft_x_specs(size_t arg)
 {
 	char	*res;
-	size_t	hex;
-	size_t	len;
+	int		hex;
+	int		len;
 	int		sign;
 
 	sign = 0;
@@ -175,11 +175,34 @@ char	*ft_ctoa(int arg)
 }
 */
 
-char	*ft_conversion_interface(const char *fmt, const void *arg)
+char	*ft_conversion_interface(interface *fsi, const void *arg)
 {
+		char fs; /* == format specifier */
+
+		fs = (char)fsi->type;
+		printf("(u)fsi->type = %u\n", fsi->type);
+		printf("(char)fsi->type = %c\n", (char)fsi->type);
+		printf("fs = %c\n", fs);
+		if (fs == 's')
+		{
+				printf("yes\n");
+				return ((char *)arg);
+		}
+		/**/
+		else if (fs == 'd' && fs == 'i')
+				return(ft_itoa((int)arg));
+		else if (fs == 'u')
+				return (ft_utoa((unsigned int)arg));
+		else if (fs == 'p')
+				return (ft_ptostr((int)arg));
+		else if (fs == 'x')
+				return (ft_x_specs((size_t)arg));
+		else if (fs == 'X')
+				return (ft_strtoupper(ft_x_specs((size_t)arg)));
+		return (NULL);
+	/*
 	if (!ft_strcmp(fmt, "s"))
 		return ((char *)arg);
-	/*
 	else if (!ft_strcmp(fmt, "c"))
 	{
 		res = (char *)malloc(sizeof(char) * 2);
@@ -188,18 +211,18 @@ char	*ft_conversion_interface(const char *fmt, const void *arg)
 		res[0] = *(char *)arg;
 		return (res);
 	}
-	*/
 	else if (!ft_strcmp(fmt, "d") || !ft_strcmp(fmt, "i"))
 		return (ft_itoa((int)arg));
 	else if (!ft_strcmp(fmt, "u"))
 		return (ft_utoa((unsigned int)arg));
 	else if (!ft_strcmp(fmt, "p"))
-		return (ft_ptostr((void *)arg));
+		return (ft_ptostr((int)arg));
 	else if (!ft_strcmp(fmt, "x"))
 		return (ft_x_specs((size_t)arg));
 	else if (!ft_strcmp(fmt, "X"))
 		return (ft_strtoupper(ft_x_specs((size_t)arg)));
 	return (NULL);
+	*/
 }
 
 /*
