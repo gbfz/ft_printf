@@ -121,28 +121,29 @@ int		read_rem(char **line, char **rem)
 
 int		get_next_line(int fd, char **line)
 {
-		char 			buf[256][BUFFER_SIZE + 1];
+		static char 	*buf;
 		static char		*rem[256];
 		int				was_read;
 		int				was_written;
 
 		if (fd < 0 || BUFFER_SIZE <= 0)
 				return (-1);
+		if ((buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))) == NULL)
+				return (-1);
 		*line = (char *)ft_calloc(sizeof(char), 1);
 		if (rem[fd] != NULL)
 				if ((was_read = read_rem(line, &rem[fd])) == -1)
 						return (-1);
 		if (rem[fd] == NULL)
-				while ((was_read = read(fd, buf[fd], BUFFER_SIZE)))
+				while ((was_read = read(fd, buf, BUFFER_SIZE)) && \
+								buf[was_written] != '\n')
 				{
 						if (was_read == -1)
 								return (-1);
-						buf[fd][was_read] = '\0';
-						if ((was_written = ft_line(line, buf[fd])) == -1)
+						buf[was_read] = '\0';
+						if ((was_written = ft_line(line, buf)) == -1)
 								return (-1);
-						rem[fd] = buf[fd] + was_written;
-						if (buf[fd][was_written] == '\n')
-								break ;
+						rem[fd] = buf + was_written;
 				}
 		return (!!was_read);
 }
