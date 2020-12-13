@@ -4,149 +4,163 @@
 #include <stdio.h>
 #include <string.h>
 
-int		get_next_line(int fd, char **line);
-char	*ft_strappend(char *str, char c);
-int		read_rem(char **line, char **buf);
-int		ft_line(char **line, char *buf);
-char	*ft_strdup(char const *s);
-size_t	ft_strlen(char const *s);
-int		ft_exit(int was_read, char **buf);
-
-int		main(void)
+size_t	ft_strlen(const char *s)
 {
-	char	*line;
+		size_t i;
 
-	int asmb = open("what.s", O_RDONLY);
-	int nabokov = open("nabokov", O_RDONLY);
-	
-	while (get_next_line(nabokov, &line) > 0)
-	{
-		printf("%s\n", line);
-		free(line);
-	}
-	close(asmb);
-	close(nabokov);
-	return (0);
+		if (s == NULL)
+				return (0);
+		i = 0;
+		while (s[i])
+				i++;
+		return (i);
 }
 
-size_t	ft_strlen(char const *s)
+void	ft_bzero(char *s, size_t size)
 {
-	size_t i;
+		size_t i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+		if (s == NULL)
+				return ;
+		i = 0;
+		while (i < size)
+		{
+				s[i] = '\0';
+				i++;
+		}
 }
 
-char	*ft_strdup(char const *s)
+/*
+char	*ft_strnew(size_t size)
 {
-	char	*res;
-	int		i;
+		char *res;
 
-	if (s == NULL)
-		return (NULL);
-	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (res == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		res[i] = s[i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+		res = (char *)malloc(sizeof(char) * size);
+		if (res == NULL)
+				return (NULL);
+		ft_bzero(res, size);
+		return (res);
+}
+*/
+
+void	*ft_calloc(size_t count, size_t size)
+{
+		void *res;
+
+		res = malloc(count * size);
+		if (res == NULL)
+				return (NULL);
+		ft_bzero(res, count * size);
+		return (res);
 }
 
-char	*ft_strappend(char *str, char c)
+char	*ft_strappend(char *s, int c)
 {
-	char	*res;
-	int	i;
+		int last;
 
-	if (str == NULL)
-		return (NULL);
-	res = (char *)malloc(sizeof(char) * (ft_strlen(str) + 2));
-	if (res == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i])
-	{
-		res[i] = str[i];
-		i++;
-	}
-	res[i] = c;
-	res[++i] = '\0';
-	return (res);
+		last = ft_strlen(s);
+		s[last] = c;
+		return (s);
+}
+
+char	*ft_realloc(char *str, size_t newsize)
+{
+		char	*res;
+		char	*tmp;
+		size_t	i;
+
+		tmp = str;
+		res = (char *)malloc(sizeof(char) * (newsize + 1));
+		if (res == NULL)
+				return (NULL);
+		i = 0;
+		while (tmp[i])
+		{
+				res[i] = tmp[i];
+				i++;
+		}
+		while (i < newsize + 1)
+		{
+				res[i] = '\0';
+				i++;
+		}
+		free(tmp);
+		return (res);
 }
 
 int		ft_line(char **line, char *buf)
 {
-	int was_processed;
+		int		was_written;
+		int		i;
 
-	was_processed = 0;
-	while (*buf != '\n' && *buf != '\0')
-	{
-		*line = ft_strappend(*line, *buf);
-		if (*line == NULL)
-			return (-1);
-		buf++;
-		was_processed++;
-	}
-	return (was_processed);
+		i = 0;
+		was_written = 0;
+		while (buf[i] != '\n' && buf[i] != '\0')
+		{
+				*line = ft_realloc(*line, ft_strlen(*line) + 1);
+				if (*line == NULL)
+						return (-1);
+				*line = ft_strappend(*line, buf[i]);
+				i++;
+				was_written++;
+		}
+		return (was_written);
 }
-
 
 int		read_rem(char **line, char **rem)
 {
-	int was_processed;
+		int	was_written;
 
-	if (*(*rem) == '\n')
-		(*rem)++;
-	was_processed = ft_line(line, *rem);
-	if (was_processed == -1)
-		return (-1);
-	*rem += was_processed + 1;
-	if (*(*rem) == '\0')
-		*rem = NULL;
-	return (1);
-}
-
-int		ft_exit(int was_read, char **buf)
-{
-	free(buf);
-	if (was_read == -1)
-		return (-1);
-	if (was_read > 0)
+		if (*(*rem) == '\n')
+				(*rem)++;
+		was_written = ft_line(line, *rem);
+		if (was_written == -1)
+				return (-1);
+		*rem += was_written;
+		if (*(*rem) == '\0')
+				*rem = NULL;
 		return (1);
-	return (0);
 }
 
 int		get_next_line(int fd, char **line)
 {
-	char		*buf;
-	char static	*rem;
-	int			was_read;
-	int			was_processed;
+		char 			buf[256][BUFFER_SIZE + 1];
+		static char		*rem[256];
+		int				was_read;
+		int				was_written;
 
-	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (buf == NULL)
-		return (-1);
-	*line = ft_strdup("");
-	if (rem != NULL)
-		if ((was_read = read_rem(line, &rem)) == -1)
-			return (ft_exit(-1, &buf));
-	if (rem == NULL)
-		while ((was_read = read(fd, buf, BUFFER_SIZE)))
+		if (fd < 0 || BUFFER_SIZE <= 0)
+				return (-1);
+		*line = (char *)ft_calloc(sizeof(char), 1);
+		if (rem[fd] != NULL)
+				if ((was_read = read_rem(line, &rem[fd])) == -1)
+						return (-1);
+		if (rem[fd] == NULL)
+				while ((was_read = read(fd, buf[fd], BUFFER_SIZE)))
+				{
+						if (was_read == -1)
+								return (-1);
+						buf[fd][was_read] = '\0';
+						if ((was_written = ft_line(line, buf[fd])) == -1)
+								return (-1);
+						rem[fd] = buf[fd] + was_written;
+						if (buf[fd][was_written] == '\n')
+								break ;
+				}
+		return (!!was_read);
+}
+
+int		main(void)
+{
+		char	*line;
+		int		nabokov = open("nabokov", O_RDONLY);
+
+		while (get_next_line(nabokov, &line) > 0)
 		{
-			if (was_read == -1)
-				return (ft_exit(-1, &buf));
-			buf[BUFFER_SIZE] = '\0';
-			if ((was_processed = ft_line(line, buf)) == -1)
-				return (ft_exit(-1, &buf));
-			rem = buf + was_processed + 1;
-			if (*(buf + was_processed) == '\n')
-				break ;
+				printf("%s\n", line);
+				free(line);
+				//sleep(1);
 		}
-	return (ft_exit(was_read, &buf));
+		close(nabokov);
+		return (0);
 }
