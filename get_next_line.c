@@ -3,13 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*
-** problems arise on:
-** BUFFER_SIZE=1: empty lines contain garbage.
-** BUFFER_SIZE=2: empty lines still contain garbage,
-** but in fewer amounts than with 1.
-** problems stop on BUFFER_SIZE >= 3.
-*/
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -123,13 +118,25 @@ int		ft_exit(int was_read, char **buf)
 {
 		if (was_read == 0)
 		{
-				free(*buf);
-				*buf = NULL;
+				if (*buf != NULL)
+				{
+						free(*buf);
+						*buf = NULL;
+				}
 				return (0);
 		}
 		if (was_read == -1)
 				return (-1);
 		return (1);
+}
+
+int		ft_init(char **line, char **buf)
+{
+		*buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		if (*buf == NULL)
+				return (-1);
+		*line = (char *)ft_calloc(sizeof(char), 1);
+		return (0);
 }
 
 int		get_next_line(int fd, char **line)
@@ -139,31 +146,24 @@ int		get_next_line(int fd, char **line)
 		int				was_read;
 		int				was_written;
 
-		if (fd < 0 || BUFFER_SIZE <= 0)
+		if (fd < 0 || BUFFER_SIZE <= 0 || ft_init(line, &buf) == -1)
 				return (-1);
-		if ((buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))) == NULL)
-				return (-1);
-		*line = (char *)ft_calloc(sizeof(char), 1);
 		if (rem[fd] != NULL)
 				if ((was_read = read_rem(line, &rem[fd])) == -1)
-						//return (-1);
 						return (ft_exit(-1, &buf));
 		if (rem[fd] == NULL)
 				while ((was_read = read(fd, buf, BUFFER_SIZE)) && \
 								buf[was_written] != '\n')
 				{
 						if (was_read == -1)
-								//return (-1);
 								return (ft_exit(-1, &buf));
 						buf[was_read] = '\0';
 						if ((was_written = ft_line(line, buf)) == -1)
-								//return (-1);
 								return (ft_exit(-1, &buf));
 						rem[fd] = buf + was_written;
 						if (buf[was_written] == '\n')
 								break ;
 				}
-		//return (!!was_read);
 		return (ft_exit(was_read, &buf));
 }
 
@@ -221,5 +221,6 @@ int		main(void)
 		printf("%s", ret == 0 ? "" : "");
 		close(nabokov);
 		close(test);
+		_CrtDumpMemoryLeaks();
 		return (0);
 }
