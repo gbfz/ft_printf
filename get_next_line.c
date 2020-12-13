@@ -119,6 +119,19 @@ int		read_rem(char **line, char **rem)
 		return (1);
 }
 
+int		ft_exit(int was_read, char **buf)
+{
+		if (was_read == 0)
+		{
+				free(*buf);
+				*buf = NULL;
+				return (0);
+		}
+		if (was_read == -1)
+				return (-1);
+		return (1);
+}
+
 int		get_next_line(int fd, char **line)
 {
 		static char 	*buf;
@@ -133,19 +146,25 @@ int		get_next_line(int fd, char **line)
 		*line = (char *)ft_calloc(sizeof(char), 1);
 		if (rem[fd] != NULL)
 				if ((was_read = read_rem(line, &rem[fd])) == -1)
-						return (-1);
+						//return (-1);
+						return (ft_exit(-1, &buf));
 		if (rem[fd] == NULL)
 				while ((was_read = read(fd, buf, BUFFER_SIZE)) && \
 								buf[was_written] != '\n')
 				{
 						if (was_read == -1)
-								return (-1);
+								//return (-1);
+								return (ft_exit(-1, &buf));
 						buf[was_read] = '\0';
 						if ((was_written = ft_line(line, buf)) == -1)
-								return (-1);
+								//return (-1);
+								return (ft_exit(-1, &buf));
 						rem[fd] = buf + was_written;
+						if (buf[was_written] == '\n')
+								break ;
 				}
-		return (!!was_read);
+		//return (!!was_read);
+		return (ft_exit(was_read, &buf));
 }
 
 int		main(void)
@@ -153,6 +172,7 @@ int		main(void)
 		char	*line;
 		int		nabokov = open("nabokov", O_RDONLY);
 		int		test = open("test", O_RDONLY);
+		int		ret;
 
 		/*
 		while (get_next_line(nabokov, &line) > 0)
@@ -163,33 +183,42 @@ int		main(void)
 		}
 		*/
 
-		get_next_line(nabokov, &line);
+		ret = get_next_line(nabokov, &line);
 		printf("%s\n", line);
 		free(line);
+		//printf("ret = %d\n", ret);
 
-		get_next_line(test, &line);
+		ret = get_next_line(test, &line);
 		printf("%s\n", line);
 		free(line);
-		get_next_line(test, &line);
+		//printf("ret = %d\n", ret);
+		ret = get_next_line(test, &line);
 		printf("%s\n", line);
 		free(line);
-		get_next_line(test, &line);
+		//printf("ret = %d\n", ret);
+		ret = get_next_line(test, &line);
 		printf("%s\n", line);
 		free(line);
-		get_next_line(test, &line);
+		//printf("ret = %d\n", ret);
+		ret = get_next_line(test, &line);
 		printf("%s\n", line);
 		free(line);
-		get_next_line(test, &line);
+		//printf("ret = %d\n", ret);
+		ret = get_next_line(test, &line);
 		printf("%s\n", line);
 		free(line);
+		//printf("ret = %d\n", ret);
 
-		get_next_line(nabokov, &line);
+		ret = get_next_line(nabokov, &line);
 		printf("%s\n", line);
 		free(line);
-		get_next_line(nabokov, &line);
+		//printf("ret = %d\n", ret);
+		ret = get_next_line(nabokov, &line);
 		printf("%s\n", line);
 		free(line);
+		//printf("ret = %d\n", ret);
 
+		printf("%s", ret == 0 ? "" : "");
 		close(nabokov);
 		close(test);
 		return (0);
