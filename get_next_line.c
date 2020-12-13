@@ -3,6 +3,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+** problems arise on:
+** BUFFER_SIZE=1: empty lines contain garbage.
+** BUFFER_SIZE=2: empty lines still contain garbage,
+** but in fewer amounts than with 1.
+** problems stop on BUFFER_SIZE >= 3.
+*/
+
 size_t	ft_strlen(const char *s)
 {
 		size_t i;
