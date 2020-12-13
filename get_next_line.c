@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -29,19 +28,6 @@ void	ft_bzero(char *s, size_t size)
 				i++;
 		}
 }
-
-/*
-char	*ft_strnew(size_t size)
-{
-		char *res;
-
-		res = (char *)malloc(sizeof(char) * size);
-		if (res == NULL)
-				return (NULL);
-		ft_bzero(res, size);
-		return (res);
-}
-*/
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -91,17 +77,20 @@ char	*ft_realloc(char *str, size_t newsize)
 int		ft_line(char **line, char *buf)
 {
 		int		was_written;
+		int		len;
 		int		i;
 
+		len = ft_strlen(*line);
 		i = 0;
 		was_written = 0;
 		while (buf[i] != '\n' && buf[i] != '\0')
 		{
-				*line = ft_realloc(*line, ft_strlen(*line) + 1);
+				*line = ft_realloc(*line, len + 1);
 				if (*line == NULL)
 						return (-1);
 				*line = ft_strappend(*line, buf[i]);
 				i++;
+				len++;
 				was_written++;
 		}
 		return (was_written);
@@ -111,13 +100,13 @@ int		read_rem(char **line, char **rem)
 {
 		int	was_written;
 
-		if (*(*rem) == '\n')
+		if ((*rem)[0] == '\n')
 				(*rem)++;
 		was_written = ft_line(line, *rem);
 		if (was_written == -1)
 				return (-1);
 		*rem += was_written;
-		if (*(*rem) == '\0')
+		if ((*rem)[0] == '\0')
 				*rem = NULL;
 		return (1);
 }
@@ -154,13 +143,45 @@ int		main(void)
 {
 		char	*line;
 		int		nabokov = open("nabokov", O_RDONLY);
+		int		test = open("test", O_RDONLY);
 
+		/*
 		while (get_next_line(nabokov, &line) > 0)
 		{
 				printf("%s\n", line);
 				free(line);
 				//sleep(1);
 		}
+		*/
+
+		get_next_line(nabokov, &line);
+		printf("%s\n", line);
+		free(line);
+
+		get_next_line(test, &line);
+		printf("%s\n", line);
+		free(line);
+		get_next_line(test, &line);
+		printf("%s\n", line);
+		free(line);
+		get_next_line(test, &line);
+		printf("%s\n", line);
+		free(line);
+		get_next_line(test, &line);
+		printf("%s\n", line);
+		free(line);
+		get_next_line(test, &line);
+		printf("%s\n", line);
+		free(line);
+
+		get_next_line(nabokov, &line);
+		printf("%s\n", line);
+		free(line);
+		get_next_line(nabokov, &line);
+		printf("%s\n", line);
+		free(line);
+
 		close(nabokov);
+		close(test);
 		return (0);
 }
