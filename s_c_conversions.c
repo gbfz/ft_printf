@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   s_c_conversions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/11/24 16:00:56 by meldora           #+#    #+#             */
+/*   Updated: 2020/12/20 13:18:51 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "ft_printf.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
-	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
-	}
-	return (*one - *two);
+char	*ft_string(va_list ap)
+{
+	char *res;
+
+	res = va_arg(ap, char *);
+	if (res == NULL)
+		return (ft_strdup("(null)"));
+	return (ft_strdup(res));
+}
+
+char	*ft_ctoa(int arg)
+{
+	char *res;
+
+	res = (char *)malloc(sizeof(char) * 2);
+	if (res == NULL)
+		return (NULL);
+	res[0] = arg;
+	res[1] = '\0';
+	return (res);
 }

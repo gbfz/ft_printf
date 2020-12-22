@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/11/03 19:49:24 by meldora           #+#    #+#             */
+/*   Updated: 2020/11/10 13:52:47 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "libft.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
-	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
-	}
-	return (*one - *two);
+char	*ft_strdup(const char *s1)
+{
+	char	*res;
+
+	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!res)
+		return (NULL);
+	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
+	return (res);
 }

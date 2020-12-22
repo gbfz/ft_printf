@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/10/29 18:01:25 by meldora           #+#    #+#             */
+/*   Updated: 2020/11/20 17:23:33 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "libft.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
-	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
-	}
-	return (*one - *two);
+char	*ft_strnstr(const char *big, const char *lit, size_t len)
+{
+	char	*hay;
+	size_t	litlen;
+
+	hay = (char *)big;
+	if (big == lit || !*lit)
+		return (hay);
+	if (!len)
+		return (NULL);
+	litlen = ft_strlen(lit);
+	while (ft_strncmp(hay, lit, litlen) && *hay && --len)
+		hay++;
+	if (!*hay || len < litlen)
+		return (NULL);
+	return (hay);
 }

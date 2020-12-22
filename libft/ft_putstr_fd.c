@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/11/05 16:21:09 by meldora           #+#    #+#             */
+/*   Updated: 2020/11/06 16:27:42 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "libft.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (*one - *two);
 }

@@ -6,43 +6,43 @@
 #    By: meldora <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/08 15:20:57 by meldora           #+#    #+#              #
-#    Updated: 2020/11/14 13:28:31 by meldora          ###   ########.fr        #
+#    Updated: 2020/12/20 13:16:37 by meldora          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
 
-BINARY		= ft_printf.out
+SRCS		= ft_printf.c memory_management.c put_functions.c ft_strcmp.c 	   \
+			  process_fmt.c ft_utoa.c s_c_conversions.c conversion_interface.c \
+			  display_interface.c display_offset.c display_d.c display_x.c	   \
+			  display_p.c len_interface.c
 
-SRCS		= $(wildcard *.c)
-
-OBJS		= ${SRCS:.c=.o}
-
-CC			= gcc
-
-CFLAGS		= -Wall -Wextra -Werror
-
-AR			= ar
-
-ARFLAGS		= rc
-
-RM			= rm -rf
+OBJS		= $(SRCS:.c=.o)
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			@gcc -Wall -Werror -Wextra -c $< -o $(<:.c=.o)
 
-$(NAME):	${OBJS}
-			${AR} ${ARFLAGS} $@ $^
+all:		$(NAME)
 
-binary:		re
-			${CC} ${CFLAGS} ${SRCS} -o ${BINARY}
-
-all:		${NAME}
+$(NAME):	$(OBJS)
+			@echo " === compiled ft_printf files ==="
+			@make -C libft
+			@echo " === compiled libft files     ==="
+			@cp libft/libft.a $(NAME)
+			@ar rcs $@ $^
+			@echo " === created a library        ==="
 
 clean:
-			${RM} ${OBJS}
+			@rm -rf $(OBJS)
+			@echo " === removed ft_printf object files ==="
+			@make clean -C libft
+			@echo " === removed libft object files     ==="
 
 fclean:		clean
-			${RM} ${NAME}
+			@rm -rf $(NAME)
+			@make fclean -C libft
+			@echo " === removed library                ==="
 
 re:			fclean all
+
+.PHONY:		all clean fclean re

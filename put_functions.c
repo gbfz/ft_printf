@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   put_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/11/22 19:18:24 by meldora           #+#    #+#             */
+/*   Updated: 2020/12/06 15:56:43 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "ft_printf.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
+void	ft_putchar(int c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(const char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
+		ft_putchar(s[i]);
+		i++;
 	}
-	return (*one - *two);
+}
+
+char	ft_putcstr(const char **fmt, int *len)
+{
+	while (*(*fmt) != '%' && *(*fmt) != '\0')
+	{
+		ft_putchar(*(*fmt));
+		(*fmt)++;
+		(*len)++;
+	}
+	return (*(*fmt));
 }

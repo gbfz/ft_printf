@@ -6,7 +6,7 @@
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 15:27:42 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/14 17:15:43 by meldora          ###   ########.fr       */
+/*   Updated: 2020/12/20 13:21:41 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,50 +16,50 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft.h"
+# include "libft/libft.h"
 
-typedef struct			s_proc
+typedef struct		s_fsi
 {
-		unsigned int	type;
-		unsigned int	typeflag;
-		int				field;
-		int				prec;
-		unsigned int	zero;
-		unsigned int	ast;
-		unsigned int	hash;
-		unsigned int	space;
-		unsigned int	plus;
-		unsigned int	fmtlen;
-}						interface;
+	unsigned char	type;
+	char			*int_types;
+	char			*oth_types;
+	int				field;
+	int				prec;
+	short			null_prec;
+	short			zero;
+	short			hash;
+	short			space;
+	short			plus;
+	unsigned int	fslen;
+}					t_fsi;
 
-typedef struct			s_print
-{
-		char			*str;
-		struct s_print	*next;
-}						printlst;
-
-int				ft_printf(const char *fmt, ...);
-char			*ft_conversion_interface(interface *fsi, const void *arg);
-char			*ft_ctostr(int arg);
-int				ft_strcmp(const char *s1, const char *s2);
-char			*ft_utoa(unsigned int n);
-int				ft_nlen(unsigned int n);
-char			*ft_dtohex(int n);
-char			*ft_strtoupper(char *s);
-char			*ft_ptostr(int arg);
-char			*ft_x_specs(size_t arg);
-void			ft_putstr(const char *s);
-void			ft_putchar(int c);
-//p_struct		*ft_create_struct(void);
-//void			ft_destroy_struct(p_struct *csi);
-//int				ft_check_fmt(const char *fmt, p_struct *csi);
-//int				ft_check_flags(const char *fmt, p_struct *csi);
-//void			ft_process_flags(char *res, p_struct *csi);
-//void			ft_putres(const char *res, p_struct *csi);
-void			ft_putres(const char *res, interface *fsi);
-size_t			ft_strclen(const char *s, char c);
-//int				ft_fmt_fwd(int fwd);
-size_t			ft_strlen(const char *s);
-int				ft_strintlen(const char *s);
+int					ft_printf(const char *fmt, ...);
+t_fsi				*ft_create_interface(void);
+void				ft_destroy_interface(t_fsi *interface);
+int					ft_cleanup(char **res, t_fsi **interface, \
+					va_list ap, int c);
+int					ft_process_fmt(const char *fmt, \
+					t_fsi *interface, va_list ap);
+void				ft_putstr(const char *s);
+char				ft_putcstr(const char **fmt, int *len);
+void				ft_putchar(int c);
+char				*ft_convert_arg(t_fsi *interface, va_list ap);
+char				*ft_string(va_list ap);
+char				*ft_ctoa(int arg);
+char				*ft_ptoa(size_t arg);
+char				*ft_utoa(unsigned int n);
+char				*ft_hextoa(size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
+void				ft_display_arg(const char *res, t_fsi *interface);
+void				ft_display_s(const char *res, t_fsi interface);
+void				ft_display_c(const char *res, t_fsi interface);
+void				ft_display_d(const char *res, t_fsi interface);
+void				ft_display_x(const char *res, t_fsi *interface);
+void				ft_display_p(const char *res, t_fsi interface);
+void				ft_display_zero(t_fsi interface, int len, int sign);
+void				ft_display_nonzero(t_fsi interface, int len, int sign);
+void				ft_display_right_offset(int len, int offset, \
+					t_fsi interface);
+int					ft_lencheck(const char *res, t_fsi *interface);
 
 #endif

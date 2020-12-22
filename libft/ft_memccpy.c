@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/10/29 19:44:43 by meldora           #+#    #+#             */
+/*   Updated: 2020/11/09 09:36:12 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "libft.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	unsigned char	*ptr;
+	size_t			offset;
+
+	ptr = ft_memchr(src, c, n);
+	if (ptr)
 	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
+		offset = ptr - (unsigned char *)src + 1;
+		return (ft_memcpy(dst, src, offset) + offset);
 	}
-	return (*one - *two);
+	ft_memcpy(dst, src, n);
+	return (NULL);
 }

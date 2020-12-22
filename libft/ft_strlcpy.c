@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meldora <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:25:41 by meldora           #+#    #+#             */
-/*   Updated: 2020/11/22 19:37:11 by meldora          ###   ########.fr       */
+/*   Created: 2020/10/28 14:44:01 by meldora           #+#    #+#             */
+/*   Updated: 2020/11/03 22:51:16 by meldora          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	const unsigned char *one;
-	const unsigned char *two;
+#include "libft.h"
 
-	one = (unsigned char *)s1;
-	two = (unsigned char *)s2;
-	if (!one || !two)
-		return (*one - *two);
-	while (*one && *two)
-	{
-		if (*one != *two)
-			return (*one - *two);
-		one++;
-		two++;
-	}
-	return (*one - *two);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	unsigned char *mydst;
+	unsigned char *mysrc;
+
+	if (!src || !dst)
+		return (0);
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	mydst = (unsigned char *)dst;
+	mysrc = (unsigned char *)src;
+	while (dstsize-- > 1 && *mysrc)
+		*mydst++ = *mysrc++;
+	*mydst = '\0';
+	return (ft_strlen(src));
 }
