@@ -14,7 +14,7 @@ void ft_memset(void* p, unsigned char c, size_t n) {
 }
 
 char* ft_strchr(const char* s, int c) {
-	if (!s || !*s)
+	if (!s || (!*s && c != '\0'))
 		return NULL;
 	if (*s == c)
 		return (char*)s;
