@@ -1,0 +1,3 @@
+/home/mgold/school/printf/build/CMakeFiles/ft_printf.dir
+/home/mgold/school/printf/build/CMakeFiles/edit_cache.dir
+/home/mgold/school/printf/build/CMakeFiles/rebuild_cache.dir
