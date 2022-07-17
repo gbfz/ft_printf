@@ -153,30 +153,6 @@ charToken.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/charToken.c.s
 .PHONY : charToken.c.s
 
-errorToken.o: errorToken.c.o
-.PHONY : errorToken.o
-
-# target to build an object file
-errorToken.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/errorToken.c.o
-.PHONY : errorToken.c.o
-
-errorToken.i: errorToken.c.i
-.PHONY : errorToken.i
-
-# target to preprocess a source file
-errorToken.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/errorToken.c.i
-.PHONY : errorToken.c.i
-
-errorToken.s: errorToken.c.s
-.PHONY : errorToken.s
-
-# target to generate assembly for a file
-errorToken.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/errorToken.c.s
-.PHONY : errorToken.c.s
-
 intToken.o: intToken.c.o
 .PHONY : intToken.o
 
@@ -297,30 +273,6 @@ percentToken.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/percentToken.c.s
 .PHONY : percentToken.c.s
 
-printer.o: printer.c.o
-.PHONY : printer.o
-
-# target to build an object file
-printer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/printer.c.o
-.PHONY : printer.c.o
-
-printer.i: printer.c.i
-.PHONY : printer.i
-
-# target to preprocess a source file
-printer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/printer.c.i
-.PHONY : printer.c.i
-
-printer.s: printer.c.s
-.PHONY : printer.s
-
-# target to generate assembly for a file
-printer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/printer.c.s
-.PHONY : printer.c.s
-
 ptrToken.o: ptrToken.c.o
 .PHONY : ptrToken.o
 
@@ -368,30 +320,6 @@ stringToken.s: stringToken.c.s
 stringToken.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/stringToken.c.s
 .PHONY : stringToken.c.s
-
-tokenizer.o: tokenizer.c.o
-.PHONY : tokenizer.o
-
-# target to build an object file
-tokenizer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tokenizer.c.o
-.PHONY : tokenizer.c.o
-
-tokenizer.i: tokenizer.c.i
-.PHONY : tokenizer.i
-
-# target to preprocess a source file
-tokenizer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tokenizer.c.i
-.PHONY : tokenizer.c.i
-
-tokenizer.s: tokenizer.c.s
-.PHONY : tokenizer.s
-
-# target to generate assembly for a file
-tokenizer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/tokenizer.c.s
-.PHONY : tokenizer.c.s
 
 uintToken.o: uintToken.c.o
 .PHONY : uintToken.o
@@ -477,9 +405,6 @@ help:
 	@echo "... charToken.o"
 	@echo "... charToken.i"
 	@echo "... charToken.s"
-	@echo "... errorToken.o"
-	@echo "... errorToken.i"
-	@echo "... errorToken.s"
 	@echo "... intToken.o"
 	@echo "... intToken.i"
 	@echo "... intToken.s"
@@ -495,18 +420,12 @@ help:
 	@echo "... percentToken.o"
 	@echo "... percentToken.i"
 	@echo "... percentToken.s"
-	@echo "... printer.o"
-	@echo "... printer.i"
-	@echo "... printer.s"
 	@echo "... ptrToken.o"
 	@echo "... ptrToken.i"
 	@echo "... ptrToken.s"
 	@echo "... stringToken.o"
 	@echo "... stringToken.i"
 	@echo "... stringToken.s"
-	@echo "... tokenizer.o"
-	@echo "... tokenizer.i"
-	@echo "... tokenizer.s"
 	@echo "... uintToken.o"
 	@echo "... uintToken.i"
 	@echo "... uintToken.s"

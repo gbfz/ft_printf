@@ -1,4 +1,4 @@
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 static int writeWrapper(union argType arg) {
@@ -9,8 +9,6 @@ static struct Token fmtCharToken(const char* fmt) {
 	return (struct Token) {
 		.print = writeWrapper,
 		.arg.c = *fmt,
-		.format.type = noFormat,
-		.format.len = 0,
 	};
 }
 
@@ -19,9 +17,8 @@ static int replTail(const struct Token token,
 					const char* fmt,
 					va_list args)
 {
-	const int written = token.print(token.arg);
-	const int tail_written = repl(fmt + token.format.len + 1, args);
-
+	int written = token.print(token.arg);
+	int tail_written = repl(fmt + token.format.len + 1, args);
 	if (tail_written == -1)
 		return -1;
 	return written + tail_written;
@@ -31,10 +28,9 @@ static int repl(const char* fmt, va_list args)
 {
 	if (!fmt || !*fmt)
 		return 0;
-	if (*fmt == '%')
-	{
+	if (*fmt == '%') {
 		struct Token token = getToken(fmt, args);
-		if (token.format.type == formatError)
+		if (!token.format.valid)
 			return -1;
 		return replTail(token, fmt, args);
 	}
@@ -75,6 +71,8 @@ void test2() {
 	// i = ft_printf("%s\n", "aboba");
 	// ft_printf(" wow%c", '\n');
 	i = ft_printf("that's all %sgood:) %d %s\n", "very ", 420, ":D");
+	printf("i = %d\n", i);
+	i = ft_printf("%j\n");
 	printf("i = %d\n", i);
 }
 

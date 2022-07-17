@@ -83,24 +83,10 @@ CMakeFiles/ft_printf.dir/charToken.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/charToken.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/charToken.c -o CMakeFiles/ft_printf.dir/charToken.c.s
 
-CMakeFiles/ft_printf.dir/errorToken.c.o: CMakeFiles/ft_printf.dir/flags.make
-CMakeFiles/ft_printf.dir/errorToken.c.o: /home/mgold/school/printf/source/errorToken.c
-CMakeFiles/ft_printf.dir/errorToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ft_printf.dir/errorToken.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/errorToken.c.o -MF CMakeFiles/ft_printf.dir/errorToken.c.o.d -o CMakeFiles/ft_printf.dir/errorToken.c.o -c /home/mgold/school/printf/source/errorToken.c
-
-CMakeFiles/ft_printf.dir/errorToken.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/errorToken.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mgold/school/printf/source/errorToken.c > CMakeFiles/ft_printf.dir/errorToken.c.i
-
-CMakeFiles/ft_printf.dir/errorToken.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/errorToken.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/errorToken.c -o CMakeFiles/ft_printf.dir/errorToken.c.s
-
 CMakeFiles/ft_printf.dir/intToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/intToken.c.o: /home/mgold/school/printf/source/intToken.c
 CMakeFiles/ft_printf.dir/intToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ft_printf.dir/intToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ft_printf.dir/intToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/intToken.c.o -MF CMakeFiles/ft_printf.dir/intToken.c.o.d -o CMakeFiles/ft_printf.dir/intToken.c.o -c /home/mgold/school/printf/source/intToken.c
 
 CMakeFiles/ft_printf.dir/intToken.c.i: cmake_force
@@ -114,7 +100,7 @@ CMakeFiles/ft_printf.dir/intToken.c.s: cmake_force
 CMakeFiles/ft_printf.dir/loHexToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/loHexToken.c.o: /home/mgold/school/printf/source/loHexToken.c
 CMakeFiles/ft_printf.dir/loHexToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ft_printf.dir/loHexToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ft_printf.dir/loHexToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/loHexToken.c.o -MF CMakeFiles/ft_printf.dir/loHexToken.c.o.d -o CMakeFiles/ft_printf.dir/loHexToken.c.o -c /home/mgold/school/printf/source/loHexToken.c
 
 CMakeFiles/ft_printf.dir/loHexToken.c.i: cmake_force
@@ -128,7 +114,7 @@ CMakeFiles/ft_printf.dir/loHexToken.c.s: cmake_force
 CMakeFiles/ft_printf.dir/parser.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/parser.c.o: /home/mgold/school/printf/source/parser.c
 CMakeFiles/ft_printf.dir/parser.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ft_printf.dir/parser.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ft_printf.dir/parser.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/parser.c.o -MF CMakeFiles/ft_printf.dir/parser.c.o.d -o CMakeFiles/ft_printf.dir/parser.c.o -c /home/mgold/school/printf/source/parser.c
 
 CMakeFiles/ft_printf.dir/parser.c.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/ft_printf.dir/parser.c.s: cmake_force
 CMakeFiles/ft_printf.dir/percentToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/percentToken.c.o: /home/mgold/school/printf/source/percentToken.c
 CMakeFiles/ft_printf.dir/percentToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ft_printf.dir/percentToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ft_printf.dir/percentToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/percentToken.c.o -MF CMakeFiles/ft_printf.dir/percentToken.c.o.d -o CMakeFiles/ft_printf.dir/percentToken.c.o -c /home/mgold/school/printf/source/percentToken.c
 
 CMakeFiles/ft_printf.dir/percentToken.c.i: cmake_force
@@ -153,24 +139,10 @@ CMakeFiles/ft_printf.dir/percentToken.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/percentToken.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/percentToken.c -o CMakeFiles/ft_printf.dir/percentToken.c.s
 
-CMakeFiles/ft_printf.dir/printer.c.o: CMakeFiles/ft_printf.dir/flags.make
-CMakeFiles/ft_printf.dir/printer.c.o: /home/mgold/school/printf/source/printer.c
-CMakeFiles/ft_printf.dir/printer.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ft_printf.dir/printer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/printer.c.o -MF CMakeFiles/ft_printf.dir/printer.c.o.d -o CMakeFiles/ft_printf.dir/printer.c.o -c /home/mgold/school/printf/source/printer.c
-
-CMakeFiles/ft_printf.dir/printer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/printer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mgold/school/printf/source/printer.c > CMakeFiles/ft_printf.dir/printer.c.i
-
-CMakeFiles/ft_printf.dir/printer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/printer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/printer.c -o CMakeFiles/ft_printf.dir/printer.c.s
-
 CMakeFiles/ft_printf.dir/ptrToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/ptrToken.c.o: /home/mgold/school/printf/source/ptrToken.c
 CMakeFiles/ft_printf.dir/ptrToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ft_printf.dir/ptrToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ft_printf.dir/ptrToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/ptrToken.c.o -MF CMakeFiles/ft_printf.dir/ptrToken.c.o.d -o CMakeFiles/ft_printf.dir/ptrToken.c.o -c /home/mgold/school/printf/source/ptrToken.c
 
 CMakeFiles/ft_printf.dir/ptrToken.c.i: cmake_force
@@ -184,7 +156,7 @@ CMakeFiles/ft_printf.dir/ptrToken.c.s: cmake_force
 CMakeFiles/ft_printf.dir/stringToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/stringToken.c.o: /home/mgold/school/printf/source/stringToken.c
 CMakeFiles/ft_printf.dir/stringToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ft_printf.dir/stringToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ft_printf.dir/stringToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/stringToken.c.o -MF CMakeFiles/ft_printf.dir/stringToken.c.o.d -o CMakeFiles/ft_printf.dir/stringToken.c.o -c /home/mgold/school/printf/source/stringToken.c
 
 CMakeFiles/ft_printf.dir/stringToken.c.i: cmake_force
@@ -195,24 +167,10 @@ CMakeFiles/ft_printf.dir/stringToken.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/stringToken.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/stringToken.c -o CMakeFiles/ft_printf.dir/stringToken.c.s
 
-CMakeFiles/ft_printf.dir/tokenizer.c.o: CMakeFiles/ft_printf.dir/flags.make
-CMakeFiles/ft_printf.dir/tokenizer.c.o: /home/mgold/school/printf/source/tokenizer.c
-CMakeFiles/ft_printf.dir/tokenizer.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ft_printf.dir/tokenizer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/tokenizer.c.o -MF CMakeFiles/ft_printf.dir/tokenizer.c.o.d -o CMakeFiles/ft_printf.dir/tokenizer.c.o -c /home/mgold/school/printf/source/tokenizer.c
-
-CMakeFiles/ft_printf.dir/tokenizer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/tokenizer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mgold/school/printf/source/tokenizer.c > CMakeFiles/ft_printf.dir/tokenizer.c.i
-
-CMakeFiles/ft_printf.dir/tokenizer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/tokenizer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mgold/school/printf/source/tokenizer.c -o CMakeFiles/ft_printf.dir/tokenizer.c.s
-
 CMakeFiles/ft_printf.dir/uintToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/uintToken.c.o: /home/mgold/school/printf/source/uintToken.c
 CMakeFiles/ft_printf.dir/uintToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ft_printf.dir/uintToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ft_printf.dir/uintToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/uintToken.c.o -MF CMakeFiles/ft_printf.dir/uintToken.c.o.d -o CMakeFiles/ft_printf.dir/uintToken.c.o -c /home/mgold/school/printf/source/uintToken.c
 
 CMakeFiles/ft_printf.dir/uintToken.c.i: cmake_force
@@ -226,7 +184,7 @@ CMakeFiles/ft_printf.dir/uintToken.c.s: cmake_force
 CMakeFiles/ft_printf.dir/upHexToken.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/upHexToken.c.o: /home/mgold/school/printf/source/upHexToken.c
 CMakeFiles/ft_printf.dir/upHexToken.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/ft_printf.dir/upHexToken.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ft_printf.dir/upHexToken.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/upHexToken.c.o -MF CMakeFiles/ft_printf.dir/upHexToken.c.o.d -o CMakeFiles/ft_printf.dir/upHexToken.c.o -c /home/mgold/school/printf/source/upHexToken.c
 
 CMakeFiles/ft_printf.dir/upHexToken.c.i: cmake_force
@@ -240,7 +198,7 @@ CMakeFiles/ft_printf.dir/upHexToken.c.s: cmake_force
 CMakeFiles/ft_printf.dir/utils.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/utils.c.o: /home/mgold/school/printf/source/utils.c
 CMakeFiles/ft_printf.dir/utils.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/ft_printf.dir/utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ft_printf.dir/utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/utils.c.o -MF CMakeFiles/ft_printf.dir/utils.c.o.d -o CMakeFiles/ft_printf.dir/utils.c.o -c /home/mgold/school/printf/source/utils.c
 
 CMakeFiles/ft_printf.dir/utils.c.i: cmake_force
@@ -254,7 +212,7 @@ CMakeFiles/ft_printf.dir/utils.c.s: cmake_force
 CMakeFiles/ft_printf.dir/main.c.o: CMakeFiles/ft_printf.dir/flags.make
 CMakeFiles/ft_printf.dir/main.c.o: /home/mgold/school/printf/source/main.c
 CMakeFiles/ft_printf.dir/main.c.o: CMakeFiles/ft_printf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/ft_printf.dir/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ft_printf.dir/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ft_printf.dir/main.c.o -MF CMakeFiles/ft_printf.dir/main.c.o.d -o CMakeFiles/ft_printf.dir/main.c.o -c /home/mgold/school/printf/source/main.c
 
 CMakeFiles/ft_printf.dir/main.c.i: cmake_force
@@ -268,15 +226,12 @@ CMakeFiles/ft_printf.dir/main.c.s: cmake_force
 # Object files for target ft_printf
 ft_printf_OBJECTS = \
 "CMakeFiles/ft_printf.dir/charToken.c.o" \
-"CMakeFiles/ft_printf.dir/errorToken.c.o" \
 "CMakeFiles/ft_printf.dir/intToken.c.o" \
 "CMakeFiles/ft_printf.dir/loHexToken.c.o" \
 "CMakeFiles/ft_printf.dir/parser.c.o" \
 "CMakeFiles/ft_printf.dir/percentToken.c.o" \
-"CMakeFiles/ft_printf.dir/printer.c.o" \
 "CMakeFiles/ft_printf.dir/ptrToken.c.o" \
 "CMakeFiles/ft_printf.dir/stringToken.c.o" \
-"CMakeFiles/ft_printf.dir/tokenizer.c.o" \
 "CMakeFiles/ft_printf.dir/uintToken.c.o" \
 "CMakeFiles/ft_printf.dir/upHexToken.c.o" \
 "CMakeFiles/ft_printf.dir/utils.c.o" \
@@ -286,22 +241,19 @@ ft_printf_OBJECTS = \
 ft_printf_EXTERNAL_OBJECTS =
 
 ft_printf: CMakeFiles/ft_printf.dir/charToken.c.o
-ft_printf: CMakeFiles/ft_printf.dir/errorToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/intToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/loHexToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/parser.c.o
 ft_printf: CMakeFiles/ft_printf.dir/percentToken.c.o
-ft_printf: CMakeFiles/ft_printf.dir/printer.c.o
 ft_printf: CMakeFiles/ft_printf.dir/ptrToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/stringToken.c.o
-ft_printf: CMakeFiles/ft_printf.dir/tokenizer.c.o
 ft_printf: CMakeFiles/ft_printf.dir/uintToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/upHexToken.c.o
 ft_printf: CMakeFiles/ft_printf.dir/utils.c.o
 ft_printf: CMakeFiles/ft_printf.dir/main.c.o
 ft_printf: CMakeFiles/ft_printf.dir/build.make
 ft_printf: CMakeFiles/ft_printf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable ft_printf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mgold/school/printf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable ft_printf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_printf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

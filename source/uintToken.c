@@ -1,4 +1,4 @@
-#include "../include/tokenizer.h"
+#include "../include/parser.h"
 
 static int printUInt(union argType arg) {
 	return printNumBase(arg.u, "0123456789", 10, 0);

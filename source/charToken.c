@@ -1,4 +1,4 @@
-#include "../include/tokenizer.h"
+#include "../include/parser.h"
 
 static int printChar(union argType arg)
 {

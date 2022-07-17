@@ -1,8 +1,9 @@
 #pragma once
+#include <stdarg.h>
 #include <unistd.h>
 
-enum formatType
-{
+enum formatType {
+	noFormat,
 	Char,
 	String,
 	Ptr,
@@ -12,12 +13,10 @@ enum formatType
 	UpHex,
 	Percent,
 	formatError,
-	noFormat,
 };
 
-enum fmtFlags
-{
-	noFlags = 0,
+enum fmtFlags {
+	noFlags,
 	Zero = (1 << 0),
 	Hash = (1 << 1),
 	Space = (1 << 2),
@@ -25,38 +24,39 @@ enum fmtFlags
 	flagError = (1 << 4)
 };
 
-union argType
-{
-	char			c;
-	char*			s;
-	int				i;
-	unsigned long	u;
+enum Valid {
+	No,
+	Yes
 };
 
-struct Flags
-{
-	int				len;
-	enum fmtFlags	value;
+union argType {
+	char c;
+	char* s;
+	int i;
+	unsigned long u;
 };
 
-struct Fields
-{
-	int	len;
-	int	width;
-	int	precision;
+struct Flags {
+	int len;
+	enum fmtFlags value;
 };
 
-struct Format
-{
-	int				len;
-	struct Flags	flags;
-	struct Fields	fields;
-	enum formatType	type;
+struct Fields {
+	int len;
+	int width;
+	int precision;
 };
 
-struct Token
-{
-	struct Format	format;
-	union argType	arg;
-	int				(*print)(union argType);
+struct Format {
+	int len;
+	enum Valid valid;
+	struct Flags flags;
+	struct Fields fields;
+	struct Token (*createToken)(struct Format, va_list);
+};
+
+struct Token {
+	struct Format format;
+	union argType arg;
+	int (*print)(union argType);
 };

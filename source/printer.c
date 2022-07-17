@@ -37,8 +37,7 @@ static int printPercent(const struct Token* t)
 
 int printToken(const struct Token* token)
 {
-	switch (token->format.type)
-	{
+	switch (token->format.type) {
 		case Char:	 return printChar	(token);
 		case String: return printString	(token);
 		case Int:	 return printInt	(token);

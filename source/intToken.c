@@ -1,4 +1,4 @@
-#include "../include/tokenizer.h"
+#include "../include/parser.h"
 
 static int printInt(union argType arg) {
 	int i = arg.i;

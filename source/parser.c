@@ -1,4 +1,4 @@
-#include "../include/tokenizer.h"
+#include "parser.h"
 
 static struct Flags parseFlags(const char* fmt)
 {
@@ -41,38 +41,48 @@ static struct Fields parseFields(const char* fmt)
 	};
 }
 
-static enum formatType getFormatType(char c)
+static tokenCreator getTokenCreator(char c)
 {
 	if (c == 'c')
-		return Char;
+		return getCharToken;
 	if (c == 's')
-		return String;
+		return getStringToken;
 	if (c == 'p')
-		return Ptr;
+		return getPtrToken;
 	if (c == 'd' || c == 'i')
-		return Int;
+		return getIntToken;
 	if (c == 'u')
-		return UInt;
+		return getUIntToken;
 	if (c == 'x')
-		return LoHex;
+		return getLoHexToken;
 	if (c == 'X')
-		return UpHex;
+		return getUpHexToken;
 	if (c == '%')
-		return Percent;
-	return formatError;
+		return getPercentToken;
+	return NULL;
 }
 
-struct Format parseFormat(const char* fmt)
+static struct Format parseFormat(const char* fmt)
 {
 	struct Flags flags = parseFlags(fmt);
 	if (flags.value == flagError)
-		return (struct Format) { .type = formatError };
+		return (struct Format) {};
 	struct Fields fields = parseFields(fmt + flags.len);
 	int len = fields.len + flags.len;
+	tokenCreator creator = getTokenCreator(fmt[len]);
 	return (struct Format) {
-		.flags = flags,
+		.valid = creator != NULL,
+		.createToken = creator,
 		.fields = fields,
+		.flags = flags,
 		.len = len,
-		.type = getFormatType(fmt[len])
 	};
+}
+
+struct Token getToken(const char* fmt, va_list args)
+{
+	struct Format format = parseFormat(fmt);
+	if (!format.valid)
+		return (struct Token) {};
+	return format.createToken(format, args);
 }

@@ -1,4 +1,4 @@
-#include "../include/tokenizer.h"
+#include "../include/parser.h"
 
 static int printUpHex(union argType arg) {
 	write(1, "0x", 2);

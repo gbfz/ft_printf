@@ -3,8 +3,9 @@
 
 CMakeFiles/ft_printf.dir/charToken.c.o: /home/mgold/school/printf/source/charToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -24,39 +25,13 @@ CMakeFiles/ft_printf.dir/charToken.c.o: /home/mgold/school/printf/source/charTok
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
-
-CMakeFiles/ft_printf.dir/errorToken.c.o: /home/mgold/school/printf/source/errorToken.c \
-  /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
-  /home/mgold/school/printf/include/types.h \
-  /usr/include/unistd.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/bits/wordsize.h \
-  /usr/include/bits/timesize.h \
-  /usr/include/sys/cdefs.h \
-  /usr/include/bits/long-double.h \
-  /usr/include/gnu/stubs.h \
-  /usr/include/gnu/stubs-64.h \
-  /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h \
-  /usr/include/bits/types.h \
-  /usr/include/bits/typesizes.h \
-  /usr/include/bits/time64.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h \
-  /usr/include/bits/confname.h \
-  /usr/include/bits/getopt_posix.h \
-  /usr/include/bits/getopt_core.h \
-  /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/intToken.c.o: /home/mgold/school/printf/source/intToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -76,13 +51,13 @@ CMakeFiles/ft_printf.dir/intToken.c.o: /home/mgold/school/printf/source/intToken
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/loHexToken.c.o: /home/mgold/school/printf/source/loHexToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -102,13 +77,51 @@ CMakeFiles/ft_printf.dir/loHexToken.c.o: /home/mgold/school/printf/source/loHexT
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
+  /home/mgold/school/printf/include/utils.h
+
+CMakeFiles/ft_printf.dir/main.c.o: /home/mgold/school/printf/source/main.c \
+  /usr/include/stdc-predef.h \
+  /home/mgold/school/printf/include/ft_printf.h \
+  /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
+  /usr/include/unistd.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/time64.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/unistd_ext.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /usr/include/stdio.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/floatn-common.h
 
 CMakeFiles/ft_printf.dir/parser.c.o: /home/mgold/school/printf/source/parser.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -128,13 +141,13 @@ CMakeFiles/ft_printf.dir/parser.c.o: /home/mgold/school/printf/source/parser.c \
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/percentToken.c.o: /home/mgold/school/printf/source/percentToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -154,36 +167,13 @@ CMakeFiles/ft_printf.dir/percentToken.c.o: /home/mgold/school/printf/source/perc
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
-
-CMakeFiles/ft_printf.dir/printer.c.o: /home/mgold/school/printf/source/printer.c \
-  /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/types.h \
-  /usr/include/unistd.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/bits/wordsize.h \
-  /usr/include/bits/timesize.h \
-  /usr/include/sys/cdefs.h \
-  /usr/include/bits/long-double.h \
-  /usr/include/gnu/stubs.h \
-  /usr/include/gnu/stubs-64.h \
-  /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h \
-  /usr/include/bits/types.h \
-  /usr/include/bits/typesizes.h \
-  /usr/include/bits/time64.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h \
-  /usr/include/bits/confname.h \
-  /usr/include/bits/getopt_posix.h \
-  /usr/include/bits/getopt_core.h \
-  /usr/include/bits/unistd_ext.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/ptrToken.c.o: /home/mgold/school/printf/source/ptrToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -203,13 +193,13 @@ CMakeFiles/ft_printf.dir/ptrToken.c.o: /home/mgold/school/printf/source/ptrToken
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/stringToken.c.o: /home/mgold/school/printf/source/stringToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -229,39 +219,13 @@ CMakeFiles/ft_printf.dir/stringToken.c.o: /home/mgold/school/printf/source/strin
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
-
-CMakeFiles/ft_printf.dir/tokenizer.c.o: /home/mgold/school/printf/source/tokenizer.c \
-  /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
-  /home/mgold/school/printf/include/types.h \
-  /usr/include/unistd.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/bits/wordsize.h \
-  /usr/include/bits/timesize.h \
-  /usr/include/sys/cdefs.h \
-  /usr/include/bits/long-double.h \
-  /usr/include/gnu/stubs.h \
-  /usr/include/gnu/stubs-64.h \
-  /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h \
-  /usr/include/bits/types.h \
-  /usr/include/bits/typesizes.h \
-  /usr/include/bits/time64.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h \
-  /usr/include/bits/confname.h \
-  /usr/include/bits/getopt_posix.h \
-  /usr/include/bits/getopt_core.h \
-  /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/uintToken.c.o: /home/mgold/school/printf/source/uintToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -281,13 +245,13 @@ CMakeFiles/ft_printf.dir/uintToken.c.o: /home/mgold/school/printf/source/uintTok
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/upHexToken.c.o: /home/mgold/school/printf/source/upHexToken.c \
   /usr/include/stdc-predef.h \
-  /home/mgold/school/printf/include/tokenizer.h \
+  /home/mgold/school/printf/include/parser.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -307,12 +271,12 @@ CMakeFiles/ft_printf.dir/upHexToken.c.o: /home/mgold/school/printf/source/upHexT
   /usr/include/bits/getopt_posix.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/unistd_ext.h \
-  /home/mgold/school/printf/include/utils.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h
+  /home/mgold/school/printf/include/utils.h
 
 CMakeFiles/ft_printf.dir/utils.c.o: /home/mgold/school/printf/source/utils.c \
   /usr/include/stdc-predef.h \
   /home/mgold/school/printf/include/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h \
   /usr/include/unistd.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -340,19 +304,41 @@ CMakeFiles/ft_printf.dir/utils.c.o: /home/mgold/school/printf/source/utils.c \
 
 /home/mgold/school/printf/source/ptrToken.c:
 
-/home/mgold/school/printf/source/printer.c:
+/usr/include/bits/floatn-common.h:
+
+/usr/include/bits/floatn.h:
+
+/home/mgold/school/printf/source/parser.c:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/types/struct_FILE.h:
 
 /home/mgold/school/printf/source/uintToken.c:
 
 /home/mgold/school/printf/source/percentToken.c:
 
+/usr/include/bits/types/FILE.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/stdio.h:
+
 /usr/include/gnu/stubs.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stddef.h:
 
-/usr/include/bits/wordsize.h:
+/usr/include/bits/long-double.h:
 
-/home/mgold/school/printf/source/tokenizer.c:
+/usr/include/bits/getopt_core.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/include/bits/wordsize.h:
 
 /usr/include/bits/getopt_posix.h:
 
@@ -360,25 +346,19 @@ CMakeFiles/ft_printf.dir/utils.c.o: /home/mgold/school/printf/source/utils.c \
 
 /usr/include/bits/typesizes.h:
 
+/usr/include/bits/types/__fpos64_t.h:
+
 /usr/include/features-time64.h:
-
-/usr/include/features.h:
-
-/usr/include/bits/confname.h:
-
-/usr/include/bits/long-double.h:
-
-/usr/include/bits/getopt_core.h:
 
 /home/mgold/school/printf/source/stringToken.c:
 
-/usr/include/unistd.h:
-
 /home/mgold/school/printf/source/intToken.c:
 
-/home/mgold/school/printf/include/tokenizer.h:
+/usr/include/unistd.h:
 
-/usr/include/bits/time64.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h:
+
+/usr/include/bits/confname.h:
 
 /usr/include/bits/environments.h:
 
@@ -394,16 +374,20 @@ CMakeFiles/ft_printf.dir/utils.c.o: /home/mgold/school/printf/source/utils.c \
 
 /usr/include/bits/types.h:
 
+/usr/include/bits/time64.h:
+
 /usr/include/bits/unistd_ext.h:
 
 /home/mgold/school/printf/include/utils.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/12.1.0/include/stdarg.h:
-
-/home/mgold/school/printf/source/parser.c:
-
-/usr/include/gnu/stubs-64.h:
-
-/home/mgold/school/printf/source/errorToken.c:
+/usr/include/bits/types/__mbstate_t.h:
 
 /home/mgold/school/printf/source/loHexToken.c:
+
+/usr/include/features.h:
+
+/home/mgold/school/printf/include/parser.h:
+
+/home/mgold/school/printf/source/main.c:
+
+/home/mgold/school/printf/include/ft_printf.h:
